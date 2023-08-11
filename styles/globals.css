@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.25rem; /* Độ rộng của thanh cuộn */
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Màu nền của phần track */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Màu nền của thanh cuộn */
+  border-radius: 0.125rem; /* Độ cong viền thanh cuộn */
+}
