@@ -1,7 +1,12 @@
+import { usePlaylistContext } from '@/contexts/PlayListsContexts'
 import { signOut, useSession } from 'next-auth/react'
 
 export default function Sidebar() {
   const { data: session } = useSession()
+
+  const { playlistContextState } = usePlaylistContext()
+
+  console.log(playlistContextState)
   return (
     <div className='text-gray-500 mx-8 pt-5 pb-36 text-xs lg:text-sm border-r  border-gray-900 h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:block lg:block'>
       {session?.user && (

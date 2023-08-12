@@ -48,6 +48,13 @@ const jwtCallback: CallbacksOptions['jwt'] = async ({ token, account, user }) =>
   console.log('Access token expired ')
   return await refreshAccessToken(token as ExtendedToken)
 }
+
+const sessionCallback: CallbacksOptions['session'] = async ({ session, token }) => {
+  ;(session as any).access_token = (token as ExtendedToken).access_token
+  ;(session as any).error = (token as ExtendedToken).error
+  return session
+}
+
 export default NextAuth({
   providers: [
     SpotifyProvider({
@@ -65,6 +72,7 @@ export default NextAuth({
     signIn: '/login'
   },
   callbacks: {
-    jwt: jwtCallback
+    jwt: jwtCallback,
+    session: sessionCallback
   }
 })
