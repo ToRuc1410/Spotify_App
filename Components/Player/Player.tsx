@@ -72,7 +72,7 @@ export default function Player() {
   }
 
   return (
-    <div className='h-20 my-2 bg-gradient-to-b from-slate-900 to-black grid grid-cols-12 gap-3 text-xs md:text-base lg:text-base px-2 '>
+    <div className='grid grid-cols-12 gap-3 text-xs md:text-base lg:text-base px-2 h-20 my-2 bg-gradient-to-b from-slate-900 to-black  '>
       {/* Left Player : now Information Song */}
       <div className='col-span-4 justify-center flex items-center'>
         {selectedSong && (
