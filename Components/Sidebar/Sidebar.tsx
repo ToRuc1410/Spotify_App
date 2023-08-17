@@ -1,27 +1,26 @@
+import Image from 'next/image'
 import { usePlaylistContext } from '@/contexts/PlayListsContexts'
-import { signOut, useSession } from 'next-auth/react'
+import useSpotify from '@/hooks/useSpotify'
+import defaulImgPlayLists from '../../accets/defaulImagePlaylist.jpg'
 
 export default function Sidebar() {
-  const { data: session } = useSession()
+  const spotifyAPI = useSpotify()
+  const {
+    playlistContextState: { playlists },
+    updatePlaylistContext
+  } = usePlaylistContext()
 
-  const { playlistContextState } = usePlaylistContext()
-
-  console.log(playlistContextState)
+  const handleSelectedPlaylist = async (playListId: string) => {
+    const resDataPlayLists = await spotifyAPI.getPlaylist(playListId)
+    if (resDataPlayLists) {
+      updatePlaylistContext({
+        selectedPlaylistId: playListId,
+        selectedPlaylist: resDataPlayLists.body
+      })
+    }
+  }
   return (
-    <div className='text-gray-500 mx-8 pt-5 pb-36 text-xs lg:text-sm border-r  border-gray-900 h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:block lg:block'>
-      {session?.user && (
-        <div className='flex justify-around py-4 bg-gray-900 mb-2 rounded-lg'>
-          <p className=' py-2'>Xin Chào: {session.user.name}</p>
-          <button
-            className='bg-gray-700 px-4 py-2 rounded-full hover:bg-white hover:text-black transition duration-500'
-            onClick={() => {
-              signOut()
-            }}
-          >
-            Logout
-          </button>
-        </div>
-      )}
+    <div className='text-gray-500  pt-5 pb-36 text-xs lg:text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:block lg:block'>
       <div className='bg-gray-900 px-20 py-5 rounded-md space-y-5 w-full '>
         <button className='flex items-start space-x-3 hover:text-gray-200'>
           <svg
@@ -59,8 +58,8 @@ export default function Sidebar() {
           <span className='mt-1'>Search</span>
         </button>
       </div>
-      <div className='mt-5 bg-gray-900 float-left w-full py-5 rounded-md pl-5 space-y-5 '>
-        <button className='flex items-center space-x-3 hover:text-gray-200 '>
+      <div className='mt-5 bg-gray-900 float-left w-full py-5 rounded-md  space-y-5 '>
+        <button className='pl-5 flex items-center space-x-3 hover:text-gray-200 '>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -78,71 +77,22 @@ export default function Sidebar() {
 
           <span className='mt-1'>Library</span>
         </button>
-        <div className=' hide-scrollbar overflow-y-scroll h-screen'>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
-          <div className='text-start'>PlayList</div>
+        <div className='text-center text-white bg-gradient-to-b from-slate-600 to-slate-800 px-4 py-2 rounded-full mx-2'>
+          Your Playlists
+        </div>
+        <div className='hide-scrollbar overflow-y-scroll h-screen'>
+          {playlists?.map(({ id, name, images }) => (
+            <button
+              className='flex pl-1 items-center pb-4 pt-2 rounded-sm hover:bg-slate-500 w-full'
+              key={id}
+              onClick={() => {
+                handleSelectedPlaylist(id)
+              }}
+            >
+              <Image src={images[0] ? images[0].url : defaulImgPlayLists} alt={name} height={80} width={80} />
+              <p className='text-slate-400  pl-1 text-sm'>{name}</p>
+            </button>
+          ))}
         </div>
       </div>
     </div>

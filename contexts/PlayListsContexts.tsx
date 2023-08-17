@@ -3,20 +3,26 @@ import { useSession } from 'next-auth/react'
 import useSpotify from '@/hooks/useSpotify'
 
 interface PlaylistContextState {
-  playlists: any[]
+  playlists: SpotifyApi.PlaylistObjectSimplified[]
+  selectedPlaylistId: string | null
+  selectedPlaylist: SpotifyApi.SinglePlaylistResponse | null
 }
 
 interface PlaylistContext {
   playlistContextState: PlaylistContextState
+  updatePlaylistContext: (updateObj: Partial<PlaylistContextState>) => void
 }
 
 /// default Playlist
 const defaultPlaylistContextState: PlaylistContextState = {
-  playlists: []
+  playlists: [],
+  selectedPlaylistId: null,
+  selectedPlaylist: null
 }
 
 export const PlaylistContext = createContext<PlaylistContext>({
-  playlistContextState: defaultPlaylistContextState
+  playlistContextState: defaultPlaylistContextState,
+  updatePlaylistContext: () => {}
 })
 
 export const usePlaylistContext = () => useContext(PlaylistContext)
@@ -26,6 +32,13 @@ const PlaylistContextProvider = ({ children }: { children: ReactNode }) => {
   const { data: session } = useSession()
   const [playlistContextState, setplaylistContextState] = useState(defaultPlaylistContextState)
 
+  const updatePlaylistContext = (updateObj: Partial<PlaylistContextState>) => {
+    setplaylistContextState((prev) => ({
+      ...prev,
+      ...updateObj
+    }))
+  }
+
   /// call spotifyAPI when user logged in with session had access_token => value
   useEffect(() => {
     // func getUserPlayList
@@ -33,9 +46,7 @@ const PlaylistContextProvider = ({ children }: { children: ReactNode }) => {
       const resGetUserPlaylist = await spotifyAPI.getUserPlaylists()
       // success
       if (resGetUserPlaylist) {
-        setplaylistContextState({
-          playlists: resGetUserPlaylist.body.items
-        })
+        updatePlaylistContext({ playlists: resGetUserPlaylist.body.items })
       }
     }
 
@@ -47,7 +58,8 @@ const PlaylistContextProvider = ({ children }: { children: ReactNode }) => {
   }, [session, spotifyAPI])
 
   const playlistContextProviderData = {
-    playlistContextState
+    playlistContextState,
+    updatePlaylistContext
   }
 
   return <PlaylistContext.Provider value={playlistContextProviderData}>{children}</PlaylistContext.Provider>
