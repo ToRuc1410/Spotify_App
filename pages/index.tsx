@@ -19,7 +19,7 @@ export default function Home() {
             <Sidebar />
             <Center />
           </main>
-          <div className='sticky bottom-10 text-white w-full'>
+          <div className='sticky bottom-5 text-white w-full'>
             <Player />
           </div>
         </SongContextProvider>
