@@ -20,7 +20,7 @@ export default function Sidebar() {
     }
   }
   return (
-    <div className='text-gray-500  pt-5 pb-36 text-xs lg:text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] md:max-w-[15rem] lg:max-w-[15rem] hidden md:block lg:block'>
+    <div className='text-gray-500  pt-5 pb-36 text-xs lg:text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] md:max-w-[15rem] lg:max-w-[15rem]'>
       <div className='bg-gray-900 px-20 py-5 rounded-md space-y-5 w-full '>
         <button className='flex justify-center items-center space-x-3 hover:text-gray-200'>
           <svg
