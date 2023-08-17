@@ -12,14 +12,14 @@ export default function Home() {
         <SongContextProvider>
           <Head>
             <title>Spotify App</title>
-            <meta name='description' content='Spotify by Tờ RSongContextProviderúc Dev' />
+            <meta name='description' content='Spotify by Tờ Rúc Dev' />
             <link rel='icon' href='/favicon.ico' />
           </Head>
-          <main className='flex  justify-center items-center'>
+          <main className='flex '>
             <Sidebar />
             <Center />
           </main>
-          <div className='sticky bottom-0 text-white w-full'>
+          <div className='sticky bottom-10 text-white w-full'>
             <Player />
           </div>
         </SongContextProvider>

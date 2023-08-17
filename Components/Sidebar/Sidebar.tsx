@@ -22,7 +22,7 @@ export default function Sidebar() {
   return (
     <div className='text-gray-500  pt-5 pb-36 text-xs lg:text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:block lg:block'>
       <div className='bg-gray-900 px-20 py-5 rounded-md space-y-5 w-full '>
-        <button className='flex items-start space-x-3 hover:text-gray-200'>
+        <button className='flex items-center space-x-3 hover:text-gray-200'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -39,7 +39,7 @@ export default function Sidebar() {
           </svg>
           <span className='mt-1'>Home</span>
         </button>
-        <button className='flex items-start space-x-3 hover:text-gray-200'>
+        <button className='flex items-center space-x-3 hover:text-gray-200'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -58,8 +58,8 @@ export default function Sidebar() {
           <span className='mt-1'>Search</span>
         </button>
       </div>
-      <div className='mt-5 bg-gray-900 float-left w-full py-5 rounded-md  space-y-5 '>
-        <button className='pl-5 flex items-center space-x-3 hover:text-gray-200 '>
+      <div className='mt-10 bg-gray-900 float-left w-full py-5 rounded-md  space-y-5 '>
+        <button className='pl-5 flex justify-center items-center space-x-3 hover:text-gray-200 '>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
