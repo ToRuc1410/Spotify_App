@@ -76,7 +76,7 @@ export default function Player() {
       {/* Left Player : now Information Song */}
       <div className='col-span-4 flex items-center'>
         {selectedSong && (
-          <div className='flex justify-start items-center space-x-2'>
+          <div className='flex justify-start items-center '>
             <Image
               src={selectedSong.album.images[0].url}
               height={50}
@@ -100,7 +100,7 @@ export default function Player() {
       </div>
 
       {/* Playing song */}
-      <div className='col-span-4 flex space-x-2 md:space-x-8 lg:space-x-8 justify-between py-2 items-center'>
+      <div className='col-span-4 flex space-x-2 justify-between py-2 items-center'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
