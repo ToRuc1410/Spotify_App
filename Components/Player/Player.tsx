@@ -74,7 +74,7 @@ export default function Player() {
   return (
     <div className='h-20 my-2 bg-gradient-to-b from-slate-900 to-black grid grid-cols-12 gap-3 text-xs md:text-base lg:text-base px-2 '>
       {/* Left Player : now Information Song */}
-      <div className='col-span-4 flex items-center'>
+      <div className='col-span-4 justify-center flex items-center'>
         {selectedSong && (
           <div className='flex justify-start items-center '>
             <Image
@@ -100,7 +100,7 @@ export default function Player() {
       </div>
 
       {/* Playing song */}
-      <div className='col-span-4 flex space-x-2 justify-between py-2 items-center'>
+      <div className='col-span-4 flex space-x-2 justify-center py-2 items-center'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
