@@ -13,7 +13,7 @@ export default function Songs() {
       </div>
     )
   return (
-    <div className='relative overflow-x-auto hide-scrollbar overflow-y-scroll h-screen'>
+    <div className='relative h-screen hide-scrollbar overflow-y-scroll  overflow-x-auto '>
       <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
         <thead className='text-xs text-white '>
           <tr>

@@ -90,7 +90,7 @@ export default function Sidebar() {
               }}
             >
               <Image src={images[0] ? images[0].url : defaulImgPlayLists} alt={name} height={80} width={80} />
-              <p className=' pl-5 text-sm text-slate-400 '>{name}</p>
+              <p className=' pl-1 text-sm text-slate-400 '>{name}</p>
             </button>
           ))}
         </div>
