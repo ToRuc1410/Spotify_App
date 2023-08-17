@@ -72,7 +72,7 @@ export default function Player() {
   }
 
   return (
-    <div className='flex justify-around items-center h-20 my-2 bg-gradient-to-b from-slate-900 to-black  text-xs md:text-base lg:text-base px-2 '>
+    <div className='flex justify-around items-center bg-slate-600 h-20 my-2 text-xs md:text-base lg:text-base px-2 '>
       {/* Left Player : now Information Song */}
       <div className='flex-1 flex flex-row items-center'>
         {selectedSong && (
@@ -83,7 +83,7 @@ export default function Player() {
               width={50}
               alt={`image for ${selectedSong.name} `}
             />
-            <div className=''>
+            <div className='mx-3'>
               <div className='hidden md:block font-mono'>{selectedSong.name}</div>
               <div className='flex'>
                 {selectedSong.artists.map((item, index) => (
@@ -100,7 +100,7 @@ export default function Player() {
       </div>
 
       {/* Playing song */}
-      <div className='flex-1 flex space-x-2 md:space-x-4 lg:space-x-4 justify-center py-2 items-center'>
+      <div className='flex-1 flex space-x-2 md:space-x-8 lg:space-x-8 justify-center py-2 items-center'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'

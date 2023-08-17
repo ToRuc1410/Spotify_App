@@ -22,7 +22,7 @@ export default function Sidebar() {
   return (
     <div className='text-gray-500  pt-5 pb-36 text-xs lg:text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] md:max-w-[15rem] lg:max-w-[15rem] hidden md:block lg:block'>
       <div className='bg-gray-900 px-20 py-5 rounded-md space-y-5 w-full '>
-        <button className='flex items-center space-x-3 hover:text-gray-200'>
+        <button className='flex justify-center items-center space-x-3 hover:text-gray-200'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -39,7 +39,7 @@ export default function Sidebar() {
           </svg>
           <span className='mt-1'>Home</span>
         </button>
-        <button className='flex items-center space-x-3 hover:text-gray-200'>
+        <button className='flex justify-center items-center space-x-3 hover:text-gray-200'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -58,7 +58,7 @@ export default function Sidebar() {
           <span className='mt-1'>Search</span>
         </button>
       </div>
-      <div className='mt-10 bg-gray-900 float-left w-full py-5 rounded-md  space-y-5 '>
+      <div className='mt-10 float-left w-full py-5 rounded-md space-y-5  bg-gray-900 '>
         <button className='pl-5 flex justify-center items-center space-x-3 hover:text-gray-200 '>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -77,7 +77,7 @@ export default function Sidebar() {
 
           <span className='mt-1'>Library</span>
         </button>
-        <div className='text-center text-white bg-gradient-to-b from-slate-600 to-slate-800 px-4 py-2 rounded-full mx-2'>
+        <div className='text-center px-4 py-2 rounded-full mx-2 text-white bg-gradient-to-b from-slate-600 to-slate-800 '>
           Your Playlists
         </div>
         <div className='hide-scrollbar overflow-y-scroll h-screen'>
@@ -90,7 +90,7 @@ export default function Sidebar() {
               }}
             >
               <Image src={images[0] ? images[0].url : defaulImgPlayLists} alt={name} height={80} width={80} />
-              <p className='text-slate-400  pl-1 text-sm'>{name}</p>
+              <p className=' pl-5 text-sm text-slate-400 '>{name}</p>
             </button>
           ))}
         </div>
