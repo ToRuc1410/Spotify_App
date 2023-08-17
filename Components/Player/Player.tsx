@@ -86,7 +86,7 @@ export default function Player() {
               alt={`image for ${selectedSong.name} `}
             />
             <div className='mx-3'>
-              <div className='ml-4 text-sm hidden md:block font-mono'>{selectedSong.name}</div>
+              <div className='ml-4 text-sm hidden md:block lg:block font-mono'>{selectedSong.name}</div>
               <div className='flex'>
                 {selectedSong.artists.map((item, index) => (
                   <p key={item.id}>
