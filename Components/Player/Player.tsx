@@ -72,7 +72,7 @@ export default function Player() {
   }
 
   return (
-    <div className='flex h-20 my-2 bg-gradient-to-b from-slate-900 to-black  text-xs md:text-base lg:text-base px-2 '>
+    <div className='flex justify-around items-center h-20 my-2 bg-gradient-to-b from-slate-900 to-black  text-xs md:text-base lg:text-base px-2 '>
       {/* Left Player : now Information Song */}
       <div className='w-1/3 flex flex-row items-center'>
         {selectedSong && (
