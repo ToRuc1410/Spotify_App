@@ -15,11 +15,11 @@ export default function Home() {
             <meta name='description' content='Spotify by Tờ Rúc Dev' />
             <link rel='icon' href='/favicon.ico' />
           </Head>
-          <main className='flex '>
+          <main className='flex space-x-4'>
             <Sidebar />
             <Center />
           </main>
-          <div className='sticky bottom-5 bg-slate-600 text-white w-full'>
+          <div className='sticky bottom-0 bg-slate-600 text-white w-full'>
             <Player />
           </div>
         </SongContextProvider>

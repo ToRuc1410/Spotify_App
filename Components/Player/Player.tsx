@@ -35,24 +35,26 @@ export default function Player() {
 
   const handlePrevSong = async (skipTo: 'prev' | 'next') => {
     if (!deviceId) return
-
+    let changeSong
     if (skipTo === 'prev') {
-      await spotifyAPI.skipToPrevious()
+      changeSong = await spotifyAPI.skipToPrevious()
     } else {
-      await spotifyAPI.skipToNext()
+      changeSong = await spotifyAPI.skipToNext()
     }
-    const songInfor = await spotifyAPI.getMyCurrentPlayingTrack()
+    if (changeSong) {
+      const songInfor = await spotifyAPI.getMyCurrentPlayingTrack()
 
-    if (!songInfor.body) return
-    else {
-      dispatchSongAction({
-        type: SongReducerActionType.SetCurrentPlayingSong,
-        payload: {
-          selectedId: songInfor.body.item?.id,
-          selectedSong: songInfor.body.item as SpotifyApi.TrackObjectFull,
-          isPlaying: songInfor.body.is_playing
-        }
-      })
+      if (!songInfor.body) return
+      else {
+        dispatchSongAction({
+          type: SongReducerActionType.SetCurrentPlayingSong,
+          payload: {
+            selectedId: songInfor.body.item?.id,
+            selectedSong: songInfor.body.item as SpotifyApi.TrackObjectFull,
+            isPlaying: songInfor.body.is_playing
+          }
+        })
+      }
     }
   }
 
@@ -79,12 +81,12 @@ export default function Player() {
           <div className='flex justify-center items-center '>
             <Image
               src={selectedSong.album.images[0].url}
-              height={50}
-              width={50}
+              height={60}
+              width={60}
               alt={`image for ${selectedSong.name} `}
             />
             <div className='mx-3'>
-              <div className='hidden md:block font-mono'>{selectedSong.name}</div>
+              <div className='ml-4 text-sm hidden md:block font-mono'>{selectedSong.name}</div>
               <div className='flex'>
                 {selectedSong.artists.map((item, index) => (
                   <p key={item.id}>
