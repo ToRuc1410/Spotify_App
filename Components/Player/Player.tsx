@@ -72,9 +72,9 @@ export default function Player() {
   }
 
   return (
-    <div className='grid grid-cols-12 gap-3 h-20 my-2 bg-gradient-to-b from-slate-900 to-black  text-xs md:text-base lg:text-base px-2 '>
+    <div className=' flex h-20 my-2 bg-gradient-to-b from-slate-900 to-black  text-xs md:text-base lg:text-base px-2 '>
       {/* Left Player : now Information Song */}
-      <div className='col-span-4 flex flex-row items-center'>
+      <div className='flex flex-row items-center'>
         {selectedSong && (
           <div className='flex justify-start items-center '>
             <Image
@@ -100,7 +100,7 @@ export default function Player() {
       </div>
 
       {/* Playing song */}
-      <div className='col-span-4 flex space-x-2 md:space-x-8 lg:space-x-8 justify-between py-2 items-center'>
+      <div className=' flex space-x-2 md:space-x-4 lg:space-x-4 justify-center py-2 items-center'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
@@ -200,7 +200,7 @@ export default function Player() {
       </div>
 
       {/* Volume of Song */}
-      <div className='col-span-4 flex justify-center items-center space-x-2'>
+      <div className=' flex justify-center items-center space-x-2'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
