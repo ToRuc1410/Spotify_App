@@ -1,9 +1,14 @@
 import Image from 'next/image'
-import { convertMillisecondsToHHMM } from '@/utils/convertTime'
-import useSpotify from '@/hooks/useSpotify'
-import { useSongContext } from '@/contexts/SongContext'
-import { SongReducerActionType } from '@/reducers/songReducer'
-import { usePlaylistContext } from '@/contexts/PlayListsContexts'
+import useSpotify from '../../hooks/useSpotify'
+import { useSongContext } from '../../contexts/SongContext'
+import { usePlaylistContext } from '../../contexts/PlayListsContexts'
+import { SongReducerActionType } from '../../reducers/songReducer'
+import { convertMillisecondsToHHMM } from '../../utils/convertTime'
+// import { convertMillisecondsToHHMM } from '@/utils/convertTime'
+// import useSpotify from '@/hooks/useSpotify'
+// import { useSongContext } from '@/contexts/SongContext'
+// import { SongReducerActionType } from '@/reducers/songReducer'
+// import { usePlaylistContext } from '@/contexts/PlayListsContexts'
 interface props {
   itemIndex: number
   item: SpotifyApi.PlaylistTrackObject

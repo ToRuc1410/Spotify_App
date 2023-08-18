@@ -1,4 +1,6 @@
-import { SongContextState } from '@/contexts/SongContext'
+// import { SongContextState } from '@/contexts/SongContext'
+
+import { SongContextState } from '../contexts/SongContext'
 
 export enum SongReducerActionType {
   SetDevice = 'SetDevice',

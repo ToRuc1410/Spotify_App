@@ -1,9 +1,12 @@
-import { useSongContext } from '@/contexts/SongContext'
-import useSpotify from '@/hooks/useSpotify'
-import { SongReducerActionType } from '@/reducers/songReducer'
+// import { useSongContext } from '@/contexts/SongContext'
+// import useSpotify from '@/hooks/useSpotify'
+// import { SongReducerActionType } from '@/reducers/songReducer'
 import Image from 'next/image'
 import { ChangeEventHandler } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
+import useSpotify from '../../hooks/useSpotify'
+import { useSongContext } from '../../contexts/SongContext'
+import { SongReducerActionType } from '../../reducers/songReducer'
 
 export default function Player() {
   const spotifyAPI = useSpotify()

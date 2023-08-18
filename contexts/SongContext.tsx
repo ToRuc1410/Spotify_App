@@ -1,8 +1,11 @@
-import { spotifyAPI } from '@/config/spotify'
-import useSpotify from '@/hooks/useSpotify'
-import { SongReducerAction, SongReducerActionType, songReducer } from '@/reducers/songReducer'
+// import { spotifyAPI } from '@/config/spotify'
+// import useSpotify from '@/hooks/useSpotify'
+// import { SongReducerAction, SongReducerActionType, songReducer } from '@/reducers/songReducer'
 import { useSession } from 'next-auth/react'
 import { Dispatch, ReactNode, createContext, useContext, useEffect, useReducer } from 'react'
+import { SongReducerAction, SongReducerActionType, songReducer } from '../reducers/songReducer'
+import useSpotify from '../hooks/useSpotify'
+import { spotifyAPI } from '../config/spotify'
 
 export interface SongContextState {
   selectedId?: string | null

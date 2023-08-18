@@ -1,4 +1,5 @@
-import { usePlaylistContext } from '@/contexts/PlayListsContexts'
+// import { usePlaylistContext } from '@/contexts/PlayListsContexts'
+import { usePlaylistContext } from '../../contexts/PlayListsContexts'
 import Song from '../Song'
 
 export default function Songs() {

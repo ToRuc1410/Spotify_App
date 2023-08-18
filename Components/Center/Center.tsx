@@ -1,12 +1,14 @@
-import { usePlaylistContext } from '@/contexts/PlayListsContexts'
+// import { usePlaylistContext } from '@/contexts/PlayListsContexts'
 import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import userIcon from '../../accets/user.png'
 import { Fragment, useEffect, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import classNames from 'classnames'
-import { pickRandomColor } from '@/utils/pickRandomColor'
+// import { pickRandomColor } from '@/utils/pickRandomColor'
 import Songs from '../Songs'
+import { usePlaylistContext } from '../../contexts/PlayListsContexts'
+import { pickRandomColor } from '../../utils/pickRandomColor'
 
 const colors = ['from-darkslategray', 'from-darkslatepurple', 'from-darkslategrown', 'from-indigo-500', 'darkslatered']
 export default function Center() {

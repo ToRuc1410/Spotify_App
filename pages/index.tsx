@@ -1,9 +1,14 @@
-import Center from '@/Components/Center'
-import Player from '@/Components/Player'
-import Sidebar from '@/Components/Sidebar'
-import PlaylistContextProvider from '@/contexts/PlayListsContexts'
-import { SongContextProvider } from '@/contexts/SongContext'
+// import Center from '@/Components/Center'
+// import Player from '@/Components/Player'
+// import Sidebar from '@/Components/Sidebar'
+// import PlaylistContextProvider from '@/contexts/PlayListsContexts'
+// import { SongContextProvider } from '@/contexts/SongContext'
 import Head from 'next/head'
+import PlaylistContextProvider from '../contexts/PlayListsContexts'
+import { SongContextProvider } from '../contexts/SongContext'
+import Sidebar from '../Components/Sidebar'
+import Center from '../Components/Center'
+import Player from '../Components/Player'
 
 export default function Home() {
   return (

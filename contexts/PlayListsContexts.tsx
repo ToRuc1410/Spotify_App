@@ -1,6 +1,7 @@
 import { createContext, useContext, ReactNode, useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
-import useSpotify from '@/hooks/useSpotify'
+import useSpotify from '../hooks/useSpotify'
+// import useSpotify from '@/hooks/useSpotify'
 
 interface PlaylistContextState {
   playlists: SpotifyApi.PlaylistObjectSimplified[]
